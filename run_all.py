@@ -40,12 +40,18 @@ def process_word(word, voice):
     except:
         logging.error(f'\t ERROR: {voice}/{word}.mp3')
 
+phu_am_dau
+random.shuffle(phu_am_dau)
 
-for p in phu_am_dau[::-1]:
+for p in phu_am_dau:
+    random.shuffle(van)
     for v in van:
         for d in dau:
-            van_co_dau = them_dau(v, d)
-            word = p + van_co_dau
-            process_word(word, "kp")
-            process_word(word, "bg")
-            process_word(word, "bt")
+            try: 
+                van_co_dau = them_dau(v, d)
+                word = p + van_co_dau
+                process_word(word, "kp")
+                process_word(word, "bg")
+                process_word(word, "bt")
+            except:
+                pass
